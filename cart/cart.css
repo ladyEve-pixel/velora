@@ -159,6 +159,130 @@
 }
 
 
+footer {
+    background: var(--black);
+
+    color: white;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 30px 15px;
+
+    padding: 40px 22px;
+
+    direction: ltr;
+
+    text-align: left;
+}
+
+.footer-brand {
+    flex: 0 0 100%;
+
+    text-align: left;
+}
+
+.footer-brand > a {
+    font-family: "DM Sans";
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.footer-brand p {
+    color: #77736f;
+
+    font-size: 9px;
+
+    line-height: 2;
+
+    margin: 15px 0;
+
+    text-align: left;
+}
+
+.footer-brand > span {
+    color: #55514e;
+
+    font-family: "DM Sans";
+
+    font-size: 7px;
+}
+
+.footer-column {
+    flex: 1 1 28%;
+
+    min-width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    text-align: left;
+}
+
+.footer-column h4,
+.footer-newsletter h4 {
+    font-family: "DM Sans";
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+    text-align: left;
+}
+
+.footer-column a {
+    color: #77736f;
+
+    font-size: 9px;
+
+    transition: .3s;
+
+    text-align: left;
+}
+
+.footer-column a:hover {
+    color: white;
+
+    padding-left: 5px;
+}
+
+.footer-newsletter {
+    text-align: left;
+}
+
+.footer-newsletter p {
+    color: #77736f;
+
+    font-size: 9px;
+
+    line-height: 2;
+
+    max-width: 230px;
+
+    text-align: left;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
 /* =====================================================
    TABLET
 ===================================================== */
@@ -253,7 +377,7 @@
 
 
     
-}
+
 
 
 .footer-brand p {
@@ -319,4 +443,4 @@
 }
 
 
-
+}

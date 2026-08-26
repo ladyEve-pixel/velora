@@ -1108,7 +1108,7 @@ a {
 
     grid-template-columns: 1fr 1fr 1fr;
 
-    gap: 4px;
+    
 
     direction: ltr;
 }
@@ -1121,6 +1121,7 @@ a {
     padding: 2px;
 
     position: relative;
+    right:3px;
 
     transition: .4s;
 
@@ -1894,6 +1895,11 @@ footer {
         color: var(--orange);
     }
 
+    .filter-button{
+        display: none;
+
+    }
+
   
 
     .hero {
@@ -1944,6 +1950,10 @@ footer {
         margin-bottom: 45px;
     }
 
+    .text-button {
+    
+    display: none;
+}
 
 
     .gallery {
