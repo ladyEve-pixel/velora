@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up — VELORA</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background: #f2f1ef;
+
+            color: #171513;
+
+            font-family: "DM Sans", sans-serif;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .auth-header {
+
+            width: 100%;
+
+            padding: 22px 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(23, 21, 19, .12);
+        }
+
+
+        .logo {
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            letter-spacing: 5px;
+        }
+
+
+        .back-home {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #3d3c3a;
+
+            transition: .3s;
+        }
+
+
+        .back-home span {
+
+            font-size: 15px;
+
+            transition: .3s;
+        }
+
+
+        .back-home:hover {
+
+            color: #ad5941;
+        }
+
+
+        .back-home:hover span {
+
+            transform: translateX(-4px);
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .auth-main {
+
+            flex: 1;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 35px 18px;
+        }
+
+
+        /* =====================================================
+           WRAPPER
+        ===================================================== */
+
+        .auth-wrapper {
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            background: #0b0908;
+
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ===================================================== */
+
+        .auth-image {
+
+            display: none;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .auth-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .8s;
+        }
+
+
+        .auth-wrapper:hover .auth-image img {
+
+            transform: scale(1.03);
+        }
+
+
+        .image-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.7),
+                    rgba(0,0,0,.05)
+                );
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 35px;
+        }
+
+
+        .image-copy {
+
+            color: white;
+        }
+
+
+        .image-copy span {
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            color: #c3aea4;
+        }
+
+
+        .image-copy h2 {
+
+            margin-top: 12px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 38px;
+
+            font-weight: 400;
+
+            line-height: 1;
+        }
+
+
+        .image-copy em {
+
+            color: #c47a62;
+
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .auth-content {
+
+            background: #f2f1ef;
+
+            padding: 38px 22px;
+        }
+
+
+        .auth-number {
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            color: #494745;
+
+            margin-bottom: 15px;
+        }
+
+
+        .auth-title {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+
+            font-weight: 400;
+
+            line-height: .95;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .auth-title em {
+
+            color: #ad5941;
+
+            font-weight: 400;
+        }
+
+
+        .auth-description {
+
+            max-width: 350px;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+
+            color: #494643;
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .auth-form {
+
+            width: 100%;
+
+            max-width: 390px;
+        }
+
+
+        .field {
+
+            margin-bottom: 18px;
+        }
+
+
+        .field label {
+
+            display: block;
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #3e3c3a;
+
+            margin-bottom: 7px;
+        }
+
+
+        .field input {
+
+            width: 100%;
+
+            height: 42px;
+
+            border: none;
+
+            border-bottom: 1px solid #aaa49e;
+
+            background: transparent;
+
+            outline: none;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+
+        .field input:focus {
+
+            border-bottom-color: #ad5941;
+        }
+
+
+        /* =====================================================
+           TERMS
+        ===================================================== */
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin: 5px 0 20px;
+
+            color: #3a3837;
+
+            font-size: 8px;
+
+            line-height: 1.6;
+        }
+
+
+        .terms input {
+
+            margin-top: 2px;
+
+            accent-color: #ad5941;
+
+            flex-shrink: 0;
+        }
+
+
+        .terms a {
+
+            color: #ad5941;
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .submit-button {
+
+
+            width: 100%;
+
+            height: 50px;
+
+            border: 1px solid #0b0908;
+
+            background: #0b0908;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            font-weight: 500;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 10px 9rem;
+
+            transition: .3s;
+        }
+        
+
+        
+        .submit-button span {
+
+            font-size: 16px;
+
+            transition: .3s;
+        }
+
+
+
+   
+
+        .submit-button:hover {
+
+            background: #ad5941;
+
+            border-color: #ad5941;
+        }
+
+
+        
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 23px 0;
+
+            color: #32302e;
+
+            font-size: 7px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .divider::before,
+        .divider::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #d4d0cc;
+        }
+
+
+        /* =====================================================
+           GUEST
+        ===================================================== */
+
+        .guest-button {
+
+            width: 100%;
+
+            height: 46px;
+
+            border: 1px solid #aaa49e;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+            color: #3f3b38;
+
+            transition: .3s;
+        }
+
+
+        .guest-button:hover {
+
+            color: #ad5941;
+
+            border-color: #ad5941;
+        }
+
+
+        /* =====================================================
+           LOGIN LINK
+        ===================================================== */
+
+        .switch-auth {
+
+            margin-top: 22px;
+
+            text-align: center;
+
+            font-size: 9px;
+
+            color: #262524;
+        }
+
+
+        .switch-auth a {
+
+            color: #ad5941;
+
+            font-weight: 600;
+
+            margin-left: 4px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .auth-footer {
+
+            padding: 15px 18px;
+
+            text-align: center;
+
+            color: #99938e;
+
+            font-size: 7px;
+
+            letter-spacing: 1.2px;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (min-width: 600px) {
+
+            .auth-header {
+
+                padding: 25px 30px;
+            }
+
+
+            .auth-main {
+
+                padding: 45px 30px;
+            }
+
+
+            .auth-content {
+
+                padding: 50px 45px;
+            }
+
+
+            .auth-title {
+
+                font-size: 50px;
+            }
+        }
+
+
+        /* =====================================================
+           DESKTOP
+        ===================================================== */
+
+        @media (min-width: 900px) {
+
+            .auth-header {
+
+                padding: 28px 45px;
+            }
+
+
+            .auth-main {
+
+                padding: 50px 45px;
+            }
+
+
+            .auth-wrapper {
+
+                grid-template-columns: 45% 55%;
+
+                max-width: 1050px;
+            }
+
+
+            .auth-image {
+
+                display: block;
+            }
+
+
+            .auth-content {
+
+                padding: 48px 60px;
+            }
+
+
+            .auth-title {
+
+                font-size: 55px;
+            }
+            .auth-description{
+                
+            max-width: 350px;
+
+            font-size: 12.5px;
+
+            line-height: 1.8;
+
+            color: #494643;
+
+            margin-bottom: 28px;
+            }
+
+            .field label {
+
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #3e3c3a;
+
+            margin-bottom: 7px;
+        }
+
+        
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin: 5px 0 20px;
+
+            color: #3a3837;
+
+            font-size: 12.5px;
+
+            line-height: 1.6;
+        }
+
+                .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 23px 0;
+
+            color: #32302e;
+
+            font-size: 12.5px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .divider::before,
+        .divider::after {
+
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #d4d0cc;
+        }
+
+        
+
+        
+        
+        .guest-button {
+
+            width: 100%;
+
+            height: 46px;
+
+            border: 1px solid #aaa49e;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 12.5px;
+
+            letter-spacing: 1.5px;
+
+            color: #3f3b38;
+
+            transition: .3s;
+        }
+
+        
+        .switch-auth {
+
+            margin-top: 22px;
+
+            text-align: center;
+
+            font-size: 12.5px;
+
+            color: #262524;
+        }
+
+
+
+
+            
+        }
+
+
+        /* =====================================================
+           LARGE DESKTOP
+        ===================================================== */
+
+        @media (min-width: 1200px) {
+
+            .auth-wrapper {
+
+                max-width: 1100px;
+            }
+
+
+            .auth-content {
+
+                padding: 55px 70px;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .auth-header {
+
+                padding: 18px 14px;
+            }
+
+
+            .logo {
+
+                font-size: 18px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .auth-main {
+
+                padding: 25px 12px;
+            }
+
+
+            .auth-content {
+
+                padding: 32px 18px;
+            }
+
+
+            .auth-title {
+
+                font-size: 37px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="auth-header">
+
+
+        <a href="../index.html"
+           class="logo">
+
+            VELORA
+
+        </a>
+
+
+        <a href="../index.html"
+           class="back-home">
+
+            <span>←</span>
+
+            Back to home
+
+        </a>
+
+
+    </header>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="auth-main">
+
+
+        <div class="auth-wrapper">
+
+
+            <!-- IMAGE -->
+
+            <div class="auth-image">
+
+                <img
+                    src="../pics/IMG_3223.jpeg"
+                    alt="VELORA Collection">
+
+
+                <div class="image-overlay">
+
+                    <div class="image-copy">
+
+                        <span>
+                            VELORA / COLLECTION 01
+                        </span>
+
+                        <h2>
+
+                            DESIGNED<br>
+
+                            <em>TO BE REMEMBERED.</em>
+
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SIGNUP CONTENT -->
+
+            <div class="auth-content">
+
+
+                <div class="auth-number">
+
+                    02 / ACCOUNT
+
+                </div>
+
+
+                <h1 class="auth-title">
+
+                    JOIN<br>
+
+                    <em>VELORA.</em>
+
+                </h1>
+
+
+                <p class="auth-description">
+
+                    Create your account and become
+                    part of a quieter approach to
+                    modern fashion.
+
+                </p>
+
+
+                <form class="auth-form">
+
+
+                    <!-- NAME -->
+
+                    <div class="field">
+
+                        <label for="name">
+
+                            Full Name
+
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="email">
+
+                            Email Address
+
+                        </label>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="field">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="new-password"
+                            required>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="field">
+
+                        <label for="confirmPassword">
+
+                            Confirm Password
+
+                        </label>
+
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            autocomplete="new-password"
+                            required>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <label class="terms">
+
+                        <input
+                            type="checkbox"
+                            required>
+
+
+                        <span>
+
+                            I agree to the
+                            <a href="#">
+                                Terms & Conditions
+                            </a>
+                            and
+                            <a href="#">
+                                Privacy Policy
+                            </a>.
+
+                        </span>
+
+                    </label>
+
+
+                    <!-- SIGNUP -->
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        <span>
+                            Signup
+                        </span>
+
+
+                    </button>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="divider">
+
+                        OR
+
+                    </div>
+
+
+                    <!-- GUEST -->
+
+                    <a href="../index.html"
+                       class="guest-button">
+
+                        CONTINUE AS GUEST
+
+                    </a>
+
+
+                    <!-- LOGIN -->
+
+                    <p class="switch-auth">
+
+                        Already have an account?
+
+                        <a href="login.html">
+
+                            Sign in
+
+                        </a>
+
+                    </p>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="auth-footer">
+
+        VELORA — MODERN CLOTHING FOR MODERN PEOPLE.
+
+    </footer>
+
+
+</body>
+
+</html>

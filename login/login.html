@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login — VELORA</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background: #f2f1ef;
+
+            color: #171513;
+
+            font-family: "DM Sans", sans-serif;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        a {
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .auth-header {
+
+            width: 100%;
+
+            padding: 22px 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(23, 21, 19, .12);
+        }
+
+
+        .logo {
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 20px;
+
+            font-weight: 600;
+
+            letter-spacing: 5px;
+        }
+
+
+        .back-home {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #6d6965;
+
+            transition: .3s;
+        }
+
+
+        .back-home span {
+
+            font-size: 15px;
+
+            transition: .3s;
+        }
+
+
+        .back-home:hover {
+
+            color: #ad5941;
+        }
+
+
+        .back-home:hover span {
+
+            transform: translateX(-4px);
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .auth-main {
+
+            flex: 1;
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 35px 18px;
+        }
+
+
+        /* =====================================================
+           AUTH WRAPPER
+        ===================================================== */
+
+        .auth-wrapper {
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            min-height: 560px;
+
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            background: #0b0908;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           IMAGE SIDE
+        ===================================================== */
+
+        .auth-image {
+
+            display: none;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .auth-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform .8s ease;
+        }
+
+
+        .auth-wrapper:hover .auth-image img {
+
+            transform: scale(1.03);
+        }
+
+
+        .image-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.05)
+                );
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 35px;
+        }
+
+
+        .image-copy {
+
+            color: white;
+        }
+
+
+        .image-copy span {
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            color: #c3aea4;
+        }
+
+
+        .image-copy h2 {
+
+            margin-top: 12px;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 38px;
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            letter-spacing: -1px;
+        }
+
+
+        .image-copy h2 em {
+
+            color: #c47a62;
+
+            font-weight: 400;
+        }
+
+
+        /* =====================================================
+           FORM SIDE
+        ===================================================== */
+
+        .auth-content {
+
+            background: #f2f1ef;
+
+            padding: 42px 22px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .auth-number {
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            color: #8a8580;
+
+            margin-bottom: 15px;
+        }
+
+
+        .auth-title {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 42px;
+
+            font-weight: 400;
+
+            line-height: .95;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .auth-title em {
+
+            color: #ad5941;
+
+            font-weight: 400;
+        }
+
+
+        .auth-description {
+
+            max-width: 330px;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+
+            color: #77716c;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .auth-form {
+
+            width: 100%;
+
+            max-width: 380px;
+        }
+
+
+        .field {
+
+            margin-bottom: 22px;
+        }
+
+
+        .field label {
+
+            display: block;
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: #3f3d3a;
+
+            margin-bottom: 8px;
+        }
+
+
+        .field input {
+
+            width: 100%;
+
+            height: 45px;
+
+            border: none;
+
+            border-bottom: 1px solid #aaa49e;
+
+            background: transparent;
+
+            outline: none;
+
+            font-size: 13px;
+
+            color: #171513;
+
+            transition: .3s;
+        }
+
+
+        .field input:focus {
+
+            border-bottom-color: #ad5941;
+        }
+
+
+        .password-row {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-top: -8px;
+
+            margin-bottom: 24px;
+        }
+
+
+        .remember {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            font-size: 13px;
+
+            color: #3f3d3b;
+        }
+
+
+        .remember input {
+
+            accent-color: #ad5941;
+        }
+
+
+        .forgot {
+
+           font-size: 13px;
+
+            color: #3f3d3b;
+
+            border-bottom: 1px solid transparent;
+
+            transition: .3s;
+        }
+
+
+        .forgot:hover {
+
+            color: #ad5941;
+
+            border-bottom-color: #ad5941;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .submit-button {
+
+            width: 100%;
+
+            height: 50px;
+
+            border: 1px solid #0b0908;
+
+            background: #0b0908;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            font-weight: 500;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 10px 9rem;
+
+            transition: .3s;
+        }
+
+
+        .submit-button span {
+
+            font-size: 16px;
+
+            transition: .3s;
+        }
+
+
+        .submit-button:hover {
+
+            background: #ad5941;
+
+            border-color: #ad5941;
+        }
+
+
+        .submit-button:hover span {
+
+            transform: translateX(4px);
+        }
+
+
+        /* =====================================================
+           DIVIDER
+        ===================================================== */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 25px 0;
+
+            color: #aaa49e;
+
+            font-size: 7px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .divider::before,
+        .divider::after {
+
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background: #d4d0cc;
+        }
+
+
+        /* =====================================================
+           GUEST BUTTON
+        ===================================================== */
+
+        .guest-button {
+
+            width: 100%;
+
+            height: 48px;
+
+            border: 1px solid #aaa49e;
+
+            background: transparent;
+
+            color: #3f3b38;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 13px;
+
+            letter-spacing: 1.5px;
+
+            transition: .3s;
+        }
+
+
+        .guest-button:hover {
+
+            border-color: #ad5941;
+
+            color: #ad5941;
+        }
+
+
+        /* =====================================================
+           SIGNUP LINK
+        ===================================================== */
+
+        .switch-auth {
+
+            margin-top: 25px;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            color: #77716c;
+        }
+
+
+        .switch-auth a {
+
+            color: #ad5941;
+
+            font-weight: 600;
+
+            margin-left: 4px;
+        }
+
+
+        .switch-auth a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .auth-footer {
+
+            padding: 15px 18px;
+
+            display: flex;
+
+            justify-content: center;
+
+            color: #99938e;
+
+            font-size: 7px;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (min-width: 600px) {
+
+            .auth-header {
+
+                padding: 25px 30px;
+            }
+
+
+            .auth-main {
+
+                padding: 45px 30px;
+            }
+
+
+            .auth-content {
+
+                padding: 50px 45px;
+            }
+
+
+            .auth-title {
+
+                font-size: 50px;
+            }
+
+
+            .auth-description {
+
+                font-size: 11px;
+            }
+        }
+
+
+        /* =====================================================
+           DESKTOP
+        ===================================================== */
+
+        @media (min-width: 900px) {
+
+            .auth-header {
+
+                padding: 28px 45px;
+            }
+
+
+            .auth-main {
+
+                padding: 55px 45px;
+            }
+
+
+            .auth-wrapper {
+
+                grid-template-columns: 45% 55%;
+
+                min-height: 580px;
+            }
+
+
+            .auth-image {
+
+                display: block;
+            }
+
+
+            .auth-content {
+
+                padding: 60px;
+            }
+
+
+            .auth-title {
+
+                font-size: 58px;
+            }
+
+
+            .auth-description {
+
+                font-size: 13px;
+
+                margin-bottom: 35px;
+            }
+
+
+
+            .divider {
+
+                    display: flex;
+
+                    align-items: center;
+
+                    gap: 12px;
+
+                    margin: 25px 0;
+
+                    color: #2c2926;
+
+                    font-size: 10px;
+
+                    letter-spacing: 1px;
+        }
+        }
+
+
+        /* =====================================================
+           LARGE DESKTOP
+        ===================================================== */
+
+        @media (min-width: 1200px) {
+
+            .auth-wrapper {
+
+                max-width: 1100px;
+            }
+
+
+            .auth-content {
+
+                padding: 70px;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .auth-header {
+
+                padding: 18px 14px;
+            }
+
+
+            .logo {
+
+                font-size: 18px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .auth-main {
+
+                padding: 25px 12px;
+            }
+
+
+            .auth-content {
+
+                padding: 35px 18px;
+            }
+
+
+            .auth-title {
+
+                font-size: 37px;
+            }
+
+
+            .password-row {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="auth-header">
+
+        <a href="../index.html"
+           class="logo">
+
+            VELORA
+
+        </a>
+
+
+        <a href="../index.html"
+           class="back-home">
+
+            <span>←</span>
+
+            Back to home
+
+        </a>
+
+    </header>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="auth-main">
+
+
+        <div class="auth-wrapper">
+
+
+            <!-- IMAGE -->
+
+            <div class="auth-image">
+
+                <img
+                    src="../pics/IMG_3239.jpeg"
+                    alt="VELORA Fashion">
+
+
+                <div class="image-overlay">
+
+                    <div class="image-copy">
+
+                        <span>
+                            VELORA / 2026
+                        </span>
+
+                        <h2>
+                            LESS NOISE.<br>
+                            <em>MORE STYLE.</em>
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div class="auth-content">
+
+
+                <div class="auth-number">
+
+                    01 / ACCOUNT
+
+                </div>
+
+
+                <h1 class="auth-title">
+
+                    WELCOME<br>
+
+                    <em>BACK.</em>
+
+                </h1>
+
+
+                <p class="auth-description">
+
+                    Sign in to your VELORA account
+                    and continue exploring timeless
+                    pieces designed beyond seasons.
+
+                </p>
+
+
+                <form class="auth-form">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="field">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="field">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            autocomplete="current-password"
+                            required>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="password-row">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                name="remember">
+
+                            Remember me
+
+                        </label>
+
+
+                        <a href="#"
+                           class="forgot">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <button
+                        type="submit"
+                        class="submit-button">
+
+                        <span>
+                            SIGN IN
+                        </span>
+
+
+                    </button>
+
+
+                    <!-- DIVIDER -->
+
+                    <div class="divider">
+
+                        OR
+
+                    </div>
+
+
+                    <!-- GUEST -->
+
+                    <a href="../index.html"
+                       class="guest-button">
+
+                        CONTINUE AS GUEST
+
+                    </a>
+
+
+                    <!-- SIGNUP -->
+
+                    <p class="switch-auth">
+
+                        Don't have an account?
+
+                        <a href="signup.html">
+                            Create one
+                        </a>
+
+                    </p>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="auth-footer">
+
+        VELORA — MODERN CLOTHING FOR MODERN PEOPLE.
+
+    </footer>
+
+
+</body>
+
+</html>

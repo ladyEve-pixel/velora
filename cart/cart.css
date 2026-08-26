@@ -1,0 +1,322 @@
+/* =====================================================
+   EMPTY CART PAGE
+   Uses the same design tokens as the main site
+   (--white, --light, --black, --brown, --orange from style.css)
+===================================================== */
+
+.cart-active {
+
+    background: var(--black);
+    color: white;
+
+}
+
+
+.empty-cart {
+
+    min-height: 78vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--white);
+
+    padding: 60px 22px;
+
+}
+
+
+.empty-cart-inner {
+
+    max-width: 420px;
+
+    width: 100%;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.empty-cart-number {
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #413f3d;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.empty-cart-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    padding: 16px;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    color: var(--white);
+
+    margin-bottom: 28px;
+
+    box-sizing: border-box;
+
+}
+
+
+.empty-cart h1 {
+
+    font-family: "DM Sans", sans-serif;
+
+    font-weight: 700;
+
+    font-size: clamp(30px, 9vw, 46px);
+
+    line-height: .95;
+
+    letter-spacing: -1px;
+
+    color: var(--black);
+
+}
+
+
+.empty-cart h1 span {
+
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    color: var(--orange);
+
+    letter-spacing: -1px;
+
+}
+
+
+.empty-cart p {
+
+    max-width: 320px;
+
+    margin: 20px 0 32px;
+
+    color: #6d6a68;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+
+}
+
+
+.empty-cart .btn {
+
+    justify-content: center;
+
+}
+
+
+.empty-cart .btn-light {
+
+    background: var(--black);
+
+    color: white;
+
+    border: 1px solid var(--black);
+
+}
+
+
+.empty-cart .btn-light:hover {
+
+    background: var(--orange);
+
+    border-color: var(--orange);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width: 600px) {
+
+    .empty-cart {
+
+        min-height: 70vh;
+
+        padding: 90px 45px;
+
+    }
+
+
+    .empty-cart-icon {
+
+        width: 68px;
+
+        height: 68px;
+
+        padding: 18px;
+
+    }
+
+
+    .empty-cart p {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 900px) {
+
+    .empty-cart {
+
+        min-height: 62vh;
+
+        padding: 130px 70px;
+
+    }
+
+
+    .empty-cart-number {
+
+        font-size: 10px;
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .empty-cart-icon {
+
+        width: 78px;
+
+        height: 78px;
+
+        padding: 20px;
+
+        margin-bottom: 36px;
+
+    }
+
+
+    .empty-cart h1 {
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .empty-cart p {
+
+        font-size: 13px;
+
+        max-width: 360px;
+
+    }
+       footer {
+        padding: 80px;
+        font-size: 16px;
+        
+    }
+
+
+    
+}
+
+
+.footer-brand p {
+    color: #413f3d;
+
+    font-size: 12px;
+
+    line-height: 2;
+
+    margin: 15px 0;
+
+    text-align: left;
+}
+
+.footer-brand a {
+    font-size: 45px;
+}
+.footer-column {
+    flex: 1 1 28%;
+
+    min-width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    text-align: left;
+}
+
+.footer-column h4,
+.footer-newsletter h4 {
+    font-family: "DM Sans";
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+    text-align: left;
+}
+
+.footer-column a {
+    color: #413f3d;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+    text-align: left;
+}
+
+.footer-column a:hover {
+    color: white;
+
+    padding-left: 5px;
+}
+
+.footer-newsletter p{
+    font-size:11px;
+}
+
+
+
